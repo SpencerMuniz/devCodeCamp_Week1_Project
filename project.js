@@ -16,12 +16,20 @@ let randomRest = getRandomItemFromArray(resturants);
 let randomWhip = getRandomItemFromArray(whips);
 let randomEnt = getRandomItemFromArray(entertainments);
 
-console.log("Your vacation location is " + randomDest + " and when you arrive, you will be dining at " + randomRest + ". You will arrive via " + randomWhip + " and for your leisure " + randomEnt);
-
-let userInput = prompt("Please enter a number 1 if you want to complete your vacation! Please enter a number 2 if you have no taste and want to retry!");
+alert("Your vacation location is " + randomDest + " and when you arrive, you will be dining at " + randomRest + ". You will arrive via " + randomWhip + " and for your leisure " + randomEnt);
+userChoice();
+function userChoice(){
+    let userInput = prompt("Please enter a number 1 if you want to complete your vacation! Please enter a number 2 if you have no taste and want to retry!");
+    while(userInput == 2){  
+        randomDest = getRandomItemFromArray(destinations);
+        randomRest = getRandomItemFromArray(resturants);
+        randomWhip = getRandomItemFromArray(whips);
+        randomEnt = getRandomItemFromArray(entertainments);
+        
+        console.log("Your vacation location is " + randomDest + " and when you arrive, you will be dining at " + randomRest + ". You will arrive via " + randomWhip + " and for your leisure " + randomEnt);
+        userInput = prompt("Please enter a number 1 if you want to complete your vacation! Please enter a number 2 if you have no taste and want to retry!");
+    }    
     if(userInput == 1){
-        console.log("Your vacation has been completed!")
+        console.log("Your vacation is complete!");
     }
-    else if(userInput == 2){
-        console.log(location.reload());
-    }
+}
