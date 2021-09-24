@@ -16,10 +16,14 @@ let randomRest = getRandomItemFromArray(resturants);
 let randomWhip = getRandomItemFromArray(whips);
 let randomEnt = getRandomItemFromArray(entertainments);
 
-alert("Your vacation location is " + randomDest + " and when you arrive, you will be dining at " + randomRest + ". You will arrive via " + randomWhip + " and for your leisure " + randomEnt);
-userChoice();
+let userInput = prompt("Your vacation location is " + randomDest + " \nand when you arrive, you will be dining at " + randomRest + ". \nYou will arrive via " + randomWhip + " \nand for your leisure " + randomEnt + "\nPlease enter a number 1 if you want to complete your vacation! \nPlease enter a number 2 if you have no taste and want to retry!");
+if(userInput == 2){
+    userChoice();
+}
+else{
+    console.log("Your vacation is complete!");
+}
 function userChoice(){
-    let userInput = prompt("Please enter a number 1 if you want to complete your vacation! Please enter a number 2 if you have no taste and want to retry!");
     while(userInput == 2){  
         randomDest = getRandomItemFromArray(destinations);
         randomRest = getRandomItemFromArray(resturants);
@@ -27,9 +31,6 @@ function userChoice(){
         randomEnt = getRandomItemFromArray(entertainments);
         
         console.log("Your vacation location is " + randomDest + " and when you arrive, you will be dining at " + randomRest + ". You will arrive via " + randomWhip + " and for your leisure " + randomEnt);
-        userInput = prompt("Please enter a number 1 if you want to complete your vacation! Please enter a number 2 if you have no taste and want to retry!");
+        userInput = prompt("Your vacation location is " + randomDest + " \nand when you arrive, you will be dining at " + randomRest + ". \nYou will arrive via " + randomWhip + " \nand for your leisure " + randomEnt + "\nPlease enter a number 1 if you want to complete your vacation! \nPlease enter a number 2 if you have no taste and want to retry!");
     }    
-    if(userInput == 1){
-        console.log("Your vacation is complete!");
-    }
 }
